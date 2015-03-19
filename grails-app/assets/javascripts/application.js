@@ -7,10 +7,7 @@
 //
 //= require jquery/dist/jquery
 //= require angular/angular
+//= require angular-route/angular-route
+//= require angularapp
+//= require_tree views
 //= require_self
-
-var myApp = angular.module('myApp', [])
-
-myApp.controller('GioController', function($scope) {
-	$scope.message = "ciao"
-});
