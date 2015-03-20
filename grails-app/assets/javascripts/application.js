@@ -8,6 +8,7 @@
 //= require jquery/dist/jquery
 //= require angular/angular
 //= require angular-route/angular-route
+//= require angular-resource/angular-resource
 //= require angularapp
 //= require_tree views
 //= require_self

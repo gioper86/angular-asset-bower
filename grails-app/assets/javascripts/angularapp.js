@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute'])
+var myApp = angular.module('myApp', ['ngRoute', 'ngResource'])
 
 myApp.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider
@@ -13,6 +13,17 @@ myApp.config(['$routeProvider', function ($routeProvider) {
 }])
 
 
-myApp.controller('GioController', function($scope) {
+myApp.controller('GioController', function($scope, $resource) {
 	$scope.message = "ciao"
+	$scope.cars = []
+	
+	$scope.init = function() {
+		var Car = $resource("../cars")
+		
+		Car.query({}, function(response) {
+			$scope.cars = response
+		})	
+	}
+	
+	$scope.init()
 });
